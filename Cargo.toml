@@ -1,0 +1,29 @@
+[package]
+name = "flock-lab"
+version = "0.1.0"
+edition = "2021"
+description = "Mac-first Rust/wgpu real-time flocking and crowd simulation demo."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1"
+bytemuck = { version = "1", features = ["derive"] }
+egui = "=0.27.2"
+egui-wgpu = "=0.27.2"
+egui-winit = "=0.27.2"
+env_logger = "0.11"
+glam = { version = "0.27", features = ["bytemuck"] }
+log = "0.4"
+pollster = "0.3"
+rand = "0.8"
+wgpu = "=0.19.4"
+winit = "=0.29.15"
+
+# Cargo 1.72 cannot parse Rust 2024 crates or build a few newer transitive
+# releases. These narrow pins keep the graph compatible with the local toolchain.
+indexmap = "=2.3.0"
+idna_adapter = "=1.0.0"
+rustc-hash = "=2.0.0"
+
+[dev-dependencies]
+approx = "0.5"
